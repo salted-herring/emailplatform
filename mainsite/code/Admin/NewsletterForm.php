@@ -38,6 +38,8 @@ class NewsletterForm_ItemRequest extends GridFieldDetailForm_ItemRequest {
 
 	public function Send($data, $form) {
 		$record = $this->record;
+		$form->saveInto($record);
+		$record->write();
 		$controller = Controller::curr();
 		$record->sendEmail();
 		return $this->edit($controller->getRequest());

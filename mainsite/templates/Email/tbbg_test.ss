@@ -350,7 +350,7 @@ a img {
 <body width="100%" height="100%" bgcolor="#efefef" style="margin: 0;" yahoo="yahoo">
 <table id="the-top" name="the-top" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#efefef" style="border-collapse:collapse;">
   <tr>
-    <td align="center" valign="middle" background="themes/default/images/header-image.jpg"><h2>test</h2><p>Some test messages</p></td>
+    <td align="center" valign="middle" background="themes/default/images/header-image.jpg" color="#ffffff" style="background-image: url(themes/default/images/header-image.jpg) !important;"><h2>test</h2><p>Some test messages</p></td>
   </tr>
 </table>
 </body>

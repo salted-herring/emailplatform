@@ -8,6 +8,7 @@ class Newsletter extends DataObject {
 		'Sender'			=>	'Varchar(254)',
 		'Recipients'		=>	'Text',
 		'EmailTemplate'		=>	'Varchar(200)',
+		'AssetPath'			=>	'Text',
 	);
 
 	protected static $defaults = array(
@@ -21,6 +22,19 @@ class Newsletter extends DataObject {
 		return $fields;
 	}
 
+	public function onBeforeWrite() {
+		parent::onBeforeWrite();
+		$path = Director::baseFolder();
+		$this->AssetPath = $path .'/themes/default/EmailAssets/' . $this->EmailTemplate;
+	}
+
+	public function onAfterWrite() {
+		parent::onAfterWrite();
+		if (!file_exists($this->AssetPath)) {
+		    mkdir($this->AssetPath, 0775, true);
+		}
+	}
+
 
 	public function sendEmail() {
 		$from = $this->Sender;
@@ -29,6 +43,13 @@ class Newsletter extends DataObject {
 
 		$email = new Email($from, $to, $subject);
 		$email->setTemplate($this->EmailTemplate);
+		$email->populateTemplate(new ArrayData(
+			array (
+				'baseURL'		=>	Director::absoluteBaseURL(Director::baseURL()),
+				'assetPath'		=>	Director::absoluteBaseURL(Director::baseURL()) . str_replace(Director::baseFolder() .'/', '', $this->AssetPath)
+			)
+		));
+
 
 		$email->send();
 	}
