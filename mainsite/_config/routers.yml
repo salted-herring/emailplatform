@@ -1,0 +1,7 @@
+---
+Name: eventroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'newsletters-viewer': 'NewslettersViewer'

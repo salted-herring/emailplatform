@@ -378,7 +378,7 @@ a img {
     <center style="width: 100%;">
         
         <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;"> LesMills Newsletter</div>
+        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">LesMills Newsletter</div>
         <!-- Visually Hidden Preheader Text : END -->
         
         <!-- Gray stripe: BEGIN -->
