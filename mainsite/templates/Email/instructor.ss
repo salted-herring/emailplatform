@@ -155,6 +155,14 @@ a img {
 	font-size: 14px !important;
 }
 
+.centered-text-block h3 {
+	font-size: 20px;
+}
+
+.centered-text-block p {
+	font-size: 16px;
+}
+
 .imagex3-table h2 {
 	font-size: 20px;
 	text-transform: uppercase;
@@ -196,45 +204,61 @@ a img {
 	font-weight: 100 !important;
 }
 
-.product-table h2 {
-	font-size: 18px !important;
-	font-weight: 100 !important;
-	margin: 0 0 1.5em !important;
-	text-transform: uppercase !important;
+/* tile block table begin */
+.tile-block-table {
+	color: #fff;
 }
 
-.product-table .product-item {
-	color: #000 !important;
-	font-size: 16px !important;
+.tile-block-table h2 {
+	font-size: 42px;
+	margin: 0 0 24px;
 }
 
-.product-table .product-item h3 {
-	margin-bottom: 0 !important;
-	font-size: 20px !important;
+.tile-block-table p {
+	font-weight: lighter;
+	font-size: 16px;
+	line-height: 1.2;
+	margin: 0 0 10px;
 }
 
-.product-table .product-item h3 a,
-.product-table .product-item .product-cateogry a {
-	transition: all ease-in-out .3s !important;
+.tile-block-table .tile-block-cell {
+	padding: 50px 30px 0;
+	height: 250px;
 }
 
-.product-table .product-item .product-cateogry {
-	font-size: 14px !important;
+.tile-block-table .tile-block-cell h3 {
+	font-size: 72px;
+	color: #00a4ce;
+	margin: 0 0 16px;
+	line-height: 1;
 }
 
-.product-table .product-item h3 a:hover,
-.product-table .product-item .product-cateogry a:hover {
-	color: #cc0000 !important;
+.tile-block-table .tile-block-cell a {
+	color: #fff;
+	text-decoration: underline !important;
 }
 
-.product-table .product-item .product-price {
-	font-size: 36px !important;
-	font-weight: bold !important;
+.tile-block-table .tile-block-cell a:hover {
+	text-decoration: none !important;
 }
 
-.product-table .product-item .product-price sup {
-	font-size: 18px !important;
+/* tile block table end */
+
+.call-to-action-table td {
+	padding: 40px 40px 20px;
 }
+
+.call-to-action-table td h2 {
+	text-transform: uppercase;
+	font-size: 32px;
+	margin-top: 0;
+}
+
+.call-to-action-table td.call-to-action-action {
+	padding-top: 0;
+	padding-bottom: 60px
+}
+
 
 .social-icons a {
 	margin: 0 3px !important;
@@ -358,7 +382,7 @@ a img {
         <!-- Visually Hidden Preheader Text : END -->
         
         <!-- Gray stripe: BEGIN -->
-        <table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#2e2e2e" style="border-collapse:collapse;">
+        <table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#100e09" style="border-collapse:collapse;">
         	<tr>
             	<td style="padding: 20px 0 0;" align="center">
                     <table cellpadding="0" cellspacing="0" border="0" style="color: #ffffff; width: 600px; border-collapse:collapse; vertical-align: top;" class="max-width-600">
@@ -394,16 +418,15 @@ a img {
         </table>
         <!-- Gray stripe: END -->
         
-        <table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#000000" style="border-collapse:collapse; color: #fff;">
+        <table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#323232" style="border-collapse:collapse; color: #fff;">
         	<tr>
             	<td align="center">
-                	<table cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width: 600px; border-collapse:collapse; color: #fff;" class="max-width-600">
-                    <tr>
-                    	<td class="call-to-action-block" align="center" valign="middle">
-                        	<img mc:edit="email_header_image" src="{$assetPath}/images/header-image.jpg" width="600" height="308" />
-                        </td>
-                    </tr>
-                    
+                	<table cellpadding="0" cellspacing="0" border="0" bgcolor="#323232" style="width: 600px; border-collapse:collapse; color: #fff;" class="max-width-600">
+                        <tr>
+                            <td style="background: url({$assetPath}/images/header_image.png) no-repeat center center !important; height: 300px;" class="call-to-action-block" align="center" valign="middle" height="300" background="images/header_image.png">
+                                <h2 style="font-size: 64px;">IT’S YOUR TIME. <br>STEP UP!</h2>
+                            </td>
+                        </tr>
                     </table>
                 </td>
             </tr>
@@ -411,131 +434,57 @@ a img {
         
         <table cellpadding="0" cellspacing="0" border="0" bgcolor="#fff" style="width: 600px; border-collapse:collapse; color: #000; background-color: #fff;" class="max-width-600">
         	<tr>
-            	<td align="center" valign="top" class="centered-text-block">
-                	<h3 mc:edit="email_header_title">*|FNAME|*, have you discovered the power of protein?</h3>
-					<div mc:edit="email_header_content"><p>Intro text here about the products on sale in this email. For example, SMARTBAR is like nothing the industry has seen before. Combining cutting-edge ergonomic design with strong and durable construction, it is fitness equipment of the highest quality.</p></div>
+            	<td align="center" valign="top" class="centered-text-block" style="padding-top: 40px !important;">
+                	<p>Hello Michael,</p>
+               	  	<h3>Are you ready to be amazing?</h3>
+					<p>Training to be a Les Mills instructor means challenging yourself and others. As you get better and better, we back you 100%. It all starts with our Initial Module Training.</p>
+					<p>This is your first step with the Les Mills global movement - ahead of you are amazing opportunities to progress your own goals and be part of our incredible experiences. </p>
+					<p>Your time is now - get ready to push yourself!</p>
                 </td>
             </tr>
         </table>
         
-        <table mc:repeatable cellpadding="0" cellspacing="0" border="0" bgcolor="#fff" style="width: 600px; border-collapse:collapse; color: #000; background-color: #fff;" class="centered-text-block-table max-width-600">
+        <table cellpadding="0" cellspacing="0" border="0" bgcolor="#003043" style="width: 600px; border-collapse:collapse; color: #fff; background-color: #003043;" class="tile-block-table max-width-600">
         	<tr>
-            	<td class="call-to-action-block" align="center" valign="middle">
-                    <img mc:edit="body_text_block_image" src="{$assetPath}/images/header-image.jpg" width="600" height="308" />
+            	<td colspan="2" class="tile-block-heading" align="center" valign="middle" style="padding: 70px 35px 60px;">
+                    <h2>KICK OFF YOUR TRAINING</h2>
+                    <p>If you’ve got the passion and drive to create amazing fitness experiences, we’ll provide you with all the support you need to reach your potential. The first steps are simple:</p>
                 </td>
             </tr>
             <tr>
-            	<td align="center" valign="top" class="centered-text-block in-body">
-                	<h3 mc:edit="body_text_block_title">*|FNAME|*, have you discovered the power of protein?</h3>
-					<div mc:edit="body_text_block_content"><p>Intro text here about the products on sale in this email. For example, SMARTBAR is like nothing the industry has seen before. Combining cutting-edge ergonomic design with strong and durable construction, it is fitness equipment of the highest quality.</p></div>
+            	<td align="center" valign="top" class="tile-block-cell" background="images/tile-1.png">
+                	<h3>1</h3>
+                    <p><strong>Register</strong><br />on the <a href="#">Les Mills Instructor Portal</a>. Follow these instructions to register.</p>
+                </td>
+                <td align="center" valign="top" class="tile-block-cell" background="images/tile-2.png">
+                	<h3>2</h3>
+                    <p><strong>Sign up</strong><br />for an <a href="#">Initial Module Training</a>, a 2-day training course where we teach you everything you need to know to get certified as a Les Mills Instructor.</p>
+                </td>
+            </tr>
+            <tr>
+            	<td align="center" valign="top" class="tile-block-cell" background="images/tile-3.png">
+                	<h3>3</h3>
+                    <p><strong>Turn up</strong><br />and bring your ‘A’ game! This is where your future starts.</p>
+                </td>
+                <td align="center" valign="top" class="tile-block-cell" background="images/tile-4.png">
+                	<h3>4</h3>
+                    <p><strong>Turn up</strong><br />that offers the program you want to teach, and get their support. Or <a href="#">get in touch</a> with your local Les Mills team for help.</p>
                 </td>
             </tr>
         </table>
         
-        <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f5f5" style="width: 600px; border-collapse:collapse; color: #000;" class="imagex3-table max-width-600">
+        <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width: 600px; border-collapse:collapse; color: #000; background-color: #ffffff;" class="call-to-action-table max-width-600">
         	<tr>
-            	<td align="center">
-	            	<h2 style="margin-top: 40px;" mc:edit="imagex3_block_title">Header to communicate the USP</h2>
-                    <hr class="short-hr" />
+            	<td align="center" class="call-to-action-heading">
+                	<h2>Ready? Book it!</h2>
+                	<p>We know you’re up for this. You’re going to be amazing.</p>
                 </td>
             </tr>
             <tr>
-            	<td align="center" valign="top" class="centered-text-block in-body" style="padding: 0 40px;" mc:edit="imagex3_block_content">
-	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum nisl vitae purus rutrum vestibulum. Etiam maximus blandit ante, et volutpat enim dapibus ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum nisl vitae purus rutrum vestibulum. </p>
+            	<td align="center" class="call-to-action-action">
+                	<img src="{$assetPath}/images/btn-book.png" alt="book your training now." width="201" height="51" />
                 </td>
             </tr>
-            <tr>
-            	<td style="padding: 0 30px 40px;">
-                	<table cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f5f5" style="width: 100%; border-collapse:collapse; margin-bottom: 10px;">
-                    	<tr mc:repeatable>
-                        	<td align="center" valign="top" class="image-cell">
-                                <img mc:edit="image_block_image_left" class="as-block" src="{$assetPath}/images/image-1.jpg" width="162" height="100" />
-                            </td>
-                            <td align="center" valign="top" class="image-cell">
-                                <img mc:edit="image_block_image_middle" class="as-block" src="{$assetPath}/images/image-2.jpg" width="162" height="100" />
-                            </td>
-                            <td align="center" valign="top" class="image-cell">
-                                <img mc:edit="image_block_image_right" class="as-block" src="{$assetPath}/images/image-3.jpg" width="162" height="100" />
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-        
-        <table mc:repeatable cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="border-collapse:collapse; color: #000; table-layout: auto !important; width: 600px;" class="quote-table max-width-600">
-        	<tr class="separator"><td colspan="4" height="40"></td></tr>
-        	<tr class="quote-body">
-            	<td class="quote-portrait" style="padding-left: 40px; width: 120px;">
-	            	<img style="border-radius: 50%;" mc:edit="quote_portrait" src="{$assetPath}/images/portrait.jpg" width="116" height="116" />
-                </td>
-                <td class="quote-left" valign="top" style="width: 38px;"><img src="{$assetPath}/images/left-quote.png" width="38" height="30" /></td>
-                <td class="quote-content" style="font-style: italic; font-weight: 100; font-size: 18px; padding-top: 20px; padding-left: 2px;">
-                	<div mc:edit="quote_content"><p>Lorem ipsum dolor sit amure doluntur magni dolores incidunt ut labore eore magnam aliquam quaerat vluptatem</p></div>
-					<div class="quote-by" mc:edit="quote_by" style="font-style: normal; font-size: 14px;">
-                    	<p>- by this person</p>
-                    </div>
-                </td>
-                <td class="quote-right" valign="bottom" style="width: 37px; padding-right: 40px; padding-bottom: 30px;"><img src="{$assetPath}/images/right-quote.png" width="37" height="30" /></td>
-            </tr>
-            <tr class="quote-extra">
-            	<td colspan="4" style="font-size: 14px; padding: 20px 40px; font-weight: 100;">
-                	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqast, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non</p>
-                </td>
-            </tr>
-            
-            <tr>
-            	<td colspan="4" align="center">
-                	<img mc:edit="quote_read_more" src="{$assetPath}/images/btn-findoutmore.png" width="201" height="51" alt="find out more" />
-                </td>
-            </tr>
-            
-        </table>
-        
-        <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width: 600px; border-collapse:collapse; color: #000;" class="product-table max-width-600">
-        	<tr class="separator"><td height="40"></td></tr>
-        	<tr>
-            	<td class="call-to-action-block" align="center" valign="middle" mc:edit="prod_header_image_block">
-                    <a href="#" target="_blank"><img mc:edit="prod_header_image" src="{$assetPath}/images/header-image.jpg" width="600" height="308" /></a>
-                </td>
-            </tr>
-            <tr>
-            	<td align="center" style="padding-top: 54px">
-                	<h2>This bundle contains:</h2>
-                    <hr class="short-hr" />
-                </td>
-            </tr>
-            <tr>
-            	<td class="call-to-action-block" align="center" valign="middle" style="padding: 0 20px !important;">
-                     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width: 100%; border-collapse:collapse; color: #000; " class="product-table-body">
-                     	<tr mc:repeatable>
-                        	<td class="left" style="padding: 20px;">
-                            	<div class="product-item">
-                                	<img class="as-block" src="{$assetPath}/images/product-1.jpg" width="233" height="228" mc:edit="product_image" />
-                                    <h3 mc:edit="product_title"><a href="#">Les Mills SMARTBAR™</a></h3>
-                                    <p class="product-cateogry" mc:edit="product_category">Weight set</p>
-                                    <p class="product-price"  style="font-size: 36px; font-weight: bold !important;">$<span mc:edit="product_price_dollar">141.</span><sup mc:edit="product_price_cent">00</sup></p>
-                                </div>
-                            </td>
-                            <td class="right" style="padding: 20px;">
-                            	<div class="product-item">
-                                	<img class="as-block" src="{$assetPath}/images/product-2.jpg" width="233" height="228" mc:edit="product_image_1" />
-                                    <h3 mc:edit="product_title_1">Les Mills SMARTBAR™</h3>
-                                    <p class="product-cateogry" mc:edit="product_category_1">System</p>
-                                    <p class="product-price"  style="font-size: 36px; font-weight: bold !important;">$<span mc:edit="product_price_dollar_1">119.</span><sup mc:edit="product_price_cent_1">95</sup></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="separator"><td height="40"></td></tr>
-                     </table>
-                </td>
-            </tr>
-            <tr>
-                <td align="center">
-                    <img mc:edit="prod_readmore" src="{$assetPath}/images/btn-findoutmore.png" width="201" height="51" alt="find out more" />
-                </td>
-            </tr>
-            <tr class="separator"><td height="40"></td></tr>
         </table>
         
         <table border="0" cellpadding="20" cellspacing="0" width="100%" id="templateFooter" bgcolor="#2e2e2e" style="color: #fff; font-size: 10px;">
@@ -567,8 +516,8 @@ a img {
             	</td>
 			</tr>
 		</table>
-    </center>
-    </td>
+      </center>
+      </td>
   </tr>
 </table>
 </body>
