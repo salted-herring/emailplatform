@@ -423,7 +423,7 @@ a img {
             	<td align="center">
                 	<table cellpadding="0" cellspacing="0" border="0" bgcolor="#323232" style="width: 600px; border-collapse:collapse; color: #fff;" class="max-width-600">
                         <tr>
-                            <td style="background: url({$assetPath}/images/header_image.png) no-repeat center center !important; height: 300px;" class="call-to-action-block" align="center" valign="middle" height="300" background="images/header_image.png">
+                            <td style="background: url({$assetPath}/images/header_image.png) no-repeat center center !important; height: 300px;" class="call-to-action-block" align="center" valign="middle" height="300" background="{$assetPath}/images/header_image.png">
                                 <h2 style="font-size: 64px;">IT’S YOUR TIME. <br>STEP UP!</h2>
                             </td>
                         </tr>
@@ -452,21 +452,21 @@ a img {
                 </td>
             </tr>
             <tr>
-            	<td align="center" valign="top" class="tile-block-cell" background="images/tile-1.png">
+            	<td align="center" valign="top" class="tile-block-cell" background="{$assetPath}/images/tile-1.png">
                 	<h3>1</h3>
                     <p><strong>Register</strong><br />on the <a href="#">Les Mills Instructor Portal</a>. Follow these instructions to register.</p>
                 </td>
-                <td align="center" valign="top" class="tile-block-cell" background="images/tile-2.png">
+                <td align="center" valign="top" class="tile-block-cell" background="{$assetPath}/images/tile-2.png">
                 	<h3>2</h3>
                     <p><strong>Sign up</strong><br />for an <a href="#">Initial Module Training</a>, a 2-day training course where we teach you everything you need to know to get certified as a Les Mills Instructor.</p>
                 </td>
             </tr>
             <tr>
-            	<td align="center" valign="top" class="tile-block-cell" background="images/tile-3.png">
+            	<td align="center" valign="top" class="tile-block-cell" background="{$assetPath}/images/tile-3.png">
                 	<h3>3</h3>
                     <p><strong>Turn up</strong><br />and bring your ‘A’ game! This is where your future starts.</p>
                 </td>
-                <td align="center" valign="top" class="tile-block-cell" background="images/tile-4.png">
+                <td align="center" valign="top" class="tile-block-cell" background="{$assetPath}/images/tile-4.png">
                 	<h3>4</h3>
                     <p><strong>Turn up</strong><br />that offers the program you want to teach, and get their support. Or <a href="#">get in touch</a> with your local Les Mills team for help.</p>
                 </td>
