@@ -10,6 +10,7 @@ class Newsletter extends DataObject {
 	);
 
 	protected static $has_one = array(
+		'BaseEmailTemplate'	=>	'BaseEmailTemplate',
 		'EmailTemplate'		=>	'EmailTemplate'
 	);
 
@@ -22,8 +23,9 @@ class Newsletter extends DataObject {
 		//$fields->addFieldToTab('Root.Main', DropdownField::create('EmailTemplate', 'Pick template', $this->listTemplates())->setEmptyString('- select one -'));
 		
 		$fields->fieldByName('Root.Main.EmailTemplateID')->setTitle('Pick template');
-		$fields->addFieldToTab('Root.Main', TextareaField::create('previ', 'Preview html', $this->prepareHTML()));
-		//Debugger::inspect($this->EmailTemplate);
+		//$fields->addFieldToTab('Root.Main', TextareaField::create('previ', 'Preview html', $this->prepareHTML()));
+		
+		//Debugger::inspect(htmlspecialchars($this->prepareHTML()));
 		return $fields;
 	}
 
@@ -37,28 +39,58 @@ class Newsletter extends DataObject {
 
 			$email = new Email($from, $to, $subject);
 			$email->setTemplate('BaseEmailTemplate');
-			$email->populateTemplate($this->onlineViewData());
+			$data = new ArrayData(
+					array (
+						'HTML'	=>	$this->prepareHTML()
+					)
+				);
+			$email->populateTemplate($data);
 
 
 			$email->send();
 		}
 	}
 
+	private function prepareBase() {
+		if (!empty($this->BaseEmailTemplateID)) {
+			$base = $this->BaseEmailTemplate()->HTML;
+			$base = str_replace('$Title', $this->Title, $base);
+			$css = $this->BaseEmailTemplate()->CSS;
+			return array('HTML' => $base, 'CSS' => $css);
+		}
+
+		return false;
+	}
+
 	private function prepareHTML() {
-		$css = $this->EmailTemplate()->CSS;
-		$html = $this->EmailTemplate()->HTML;
+		if (!empty($this->EmailTemplateID)) {
 
-		$assetPath = Director::absoluteBaseURL(Director::baseURL()) . str_replace(Director::baseFolder() .'/', '', $this->EmailTemplate()->AssetPath);
+			$css = $this->EmailTemplate()->CSS;
+			$html = $this->EmailTemplate()->HTML;
 
-		$html = str_replace('background="images/', 'background="'.$assetPath.'/images/', $html);
-		$html = str_replace('src="images/', 'src="'.$assetPath.'/images/', $html);
-		$html = str_replace('url(images/', 'url('.$assetPath.'/images/', $html);
-		$html = str_replace('$online_viewer', Director::absoluteBaseURL(Director::baseURL()) . 'newsletters-viewer/' . $this->ID, $html);
+			if ($base = $this->prepareBase()) {
+				$base_html = $base['HTML'];
+				$base_css = $base['CSS'];
+			}
 
+			$assetPath = Director::absoluteBaseURL(Director::baseURL()) . str_replace(Director::baseFolder() .'/', '', $this->EmailTemplate()->AssetPath);
 
-		$emogrifier = new \Pelago\Emogrifier($html, $css);
+			$html = str_replace('background="images/', 'background="'.$assetPath.'/images/', $html);
+			$html = str_replace('src="images/', 'src="'.$assetPath.'/images/', $html);
+			$html = str_replace('url(images/', 'url('.$assetPath.'/images/', $html);
+			$html = str_replace('$online_viewer', Director::absoluteBaseURL(Director::baseURL()) . 'newsletters-viewer/' . $this->ID, $html);
 
-		return $emogrifier->emogrify();
+			if (!empty($base_html) && !empty($base_css)) {
+				$css = $base_css . $css;
+				//$base_html = str_replace('$CSS', $css, $base_html);
+				$html = str_replace('$HTML', $html, $base_html);
+			}
+			$emogrifier = new \Pelago\Emogrifier($html, $css);
+
+			return $emogrifier->emogrify();
+		}
+
+		return false;
 	}
 
 	public function onlineViewData() {

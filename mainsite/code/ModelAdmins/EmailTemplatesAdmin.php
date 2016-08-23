@@ -6,7 +6,7 @@
  * */
 
 class EmailTemplatesAdmin extends ModelAdmin {
-	private static $managed_models = array('EmailTemplate');
+	private static $managed_models = array('EmailTemplate', 'BaseEmailTemplate');
 	private static $url_segment = 'emailTemplates';
 	private static $menu_title = 'Email Templates';
 	

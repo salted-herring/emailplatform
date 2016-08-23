@@ -1,6 +1,6 @@
 <?php use SaltedHerring\Utilities as Utilities;
 
-class EmailTemplate extends DataObject {
+class EmailTemplate extends BaseEmailTemplate {
 	protected static $db = array(
 		'Title'			=>	'Varchar(64)',
 		'CSS'			=>	'Text',
