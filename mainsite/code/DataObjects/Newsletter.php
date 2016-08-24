@@ -23,7 +23,9 @@ class Newsletter extends DataObject {
 		//$fields->addFieldToTab('Root.Main', DropdownField::create('EmailTemplate', 'Pick template', $this->listTemplates())->setEmptyString('- select one -'));
 		
 		$fields->fieldByName('Root.Main.EmailTemplateID')->setTitle('Pick template');
-		//$fields->addFieldToTab('Root.Main', TextareaField::create('previ', 'Preview html', $this->prepareHTML()));
+		if (!empty($this->BaseEmailTemplateID) && !empty($this->EmailTemplateID)) {
+			$fields->addFieldToTab('Root.Main', TextareaField::create('previ', 'Preview html', $this->prepareHTML()));
+		}
 		
 		//Debugger::inspect(htmlspecialchars($this->prepareHTML()));
 		return $fields;
