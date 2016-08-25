@@ -80,6 +80,7 @@ class Newsletter extends DataObject {
 			$html = str_replace('background="images/', 'background="'.$assetPath.'/images/', $html);
 			$html = str_replace('src="images/', 'src="'.$assetPath.'/images/', $html);
 			$html = str_replace('url(images/', 'url('.$assetPath.'/images/', $html);
+			$css = str_replace('url(images/', 'url('.$assetPath.'/images/', $css);
 			$html = str_replace('$online_viewer', Director::absoluteBaseURL(Director::baseURL()) . 'newsletters-viewer/' . $this->ID, $html);
 
 			if (!empty($base_html) && !empty($base_css)) {
@@ -113,35 +114,4 @@ class Newsletter extends DataObject {
 				);
 	}
 
-	/*
-		$html = '<html><h1>Hello world!</h1></html>';
-		$css = 'h1 {font-size: 32px;}';
-		$emogrifier = new \Pelago\Emogrifier($html, $css);
-		You could also use the setters for providing this data after instantiation:
-
-		$emogrifier = new \Pelago\Emogrifier();
-
-		$html = '<html><h1>Hello world!</h1></html>';
-		$css = 'h1 {font-size: 32px;}';
-
-		$emogrifier->setHtml($html);
-		$emogrifier->setCss($css);
-		After you have set the HTML and CSS, you can call the emogrify method to merge both:
-
-		$mergedHtml = $emogrifier->emogrify();
-	*/
-
-	// private function listTemplates() {
-
-	// 	$template_folder = realpath(ROOT.'../') . '/mainsite/templates/Email/';
-	// 	$email_templates = glob($template_folder . '*.ss');
-	// 	$template_names = array();
-	// 	foreach ($email_templates as $filename) {
-	// 	    $filename = str_replace($template_folder, '', $filename);
-	// 	    $filename = str_replace('.ss', '', $filename);
-	// 	    $template_names[$filename] = $filename;
-	// 	}
-
-	// 	return $template_names;
-	// }
 }
