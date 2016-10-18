@@ -31,3 +31,5 @@ silverstripe-socialnetwork-links
 silverstripe-menumanager
 rightsidebar/
 themes/default/.sass-cache/
+composer.lock
+silverstripe.log
