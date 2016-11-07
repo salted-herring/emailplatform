@@ -8,6 +8,10 @@ class EmailTemplate extends BaseEmailTemplate {
 		'AssetPath'		=>	'Text'
 	);
 
+	protected static $has_one = array(
+	    'CSSField'		=>	'File'
+	);
+
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 		$fields->addFieldToTab('Root.Main', ReadonlyField::create('AssetPath', 'Asset Directory Path'));

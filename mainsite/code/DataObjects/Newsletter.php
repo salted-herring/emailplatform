@@ -21,12 +21,12 @@ class Newsletter extends DataObject {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 		//$fields->addFieldToTab('Root.Main', DropdownField::create('EmailTemplate', 'Pick template', $this->listTemplates())->setEmptyString('- select one -'));
-		
+
 		$fields->fieldByName('Root.Main.EmailTemplateID')->setTitle('Pick template');
 		if (!empty($this->BaseEmailTemplateID) && !empty($this->EmailTemplateID)) {
 			$fields->addFieldToTab('Root.Main', TextareaField::create('previ', 'Preview html', $this->prepareHTML()));
 		}
-		
+
 		//Debugger::inspect(htmlspecialchars($this->prepareHTML()));
 		return $fields;
 	}
@@ -67,7 +67,7 @@ class Newsletter extends DataObject {
 	private function prepareHTML() {
 		if (!empty($this->EmailTemplateID)) {
 
-			$css = $this->EmailTemplate()->CSS;
+			$css = !empty($this->EmailTemplateID) ? file_get_contents($this->EmailTemplate()->CSSField()->getFullPath()) : $this->EmailTemplate()->CSS;
 			$html = $this->EmailTemplate()->HTML;
 
 			if ($base = $this->prepareBase()) {
